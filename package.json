@@ -1,6 +1,6 @@
 {
   "name": "realizm-bot",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "An advanced Discord bot with a lot commands - for moderation, fun, NSFW and status.",
   "author": "Npg",
   "main": "node xp.js",
