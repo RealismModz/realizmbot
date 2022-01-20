@@ -100,8 +100,6 @@ function keepAlive(){
 
 }
 
-
-
 module.exports = keepAlive;
 //add the router
 app.use('/', router);

@@ -1,4 +1,4 @@
-# Dyno CLone [all in one bot]
+# Realizm Bot
 A Discord Moderation Bot With Different Features, mostly made for Moderating a Discord Server 
 
 # Features
