@@ -8,11 +8,11 @@ module.exports = {
 
   let user = message.mentions.members.first() || message.author;
 
-  let bal = db.fetch(`money_${message.author.id}`)
+  let bal = db.fetch(`money_${user.id}`)
 
   if (bal === null) bal = 0;
 
-  let bank = await db.fetch(`bank_${message.author.id}`)
+  let bank = await db.fetch(`bank_${user.id}`)
   if (bank === null) bank = 0;
 
   let moneyEmbed = new Discord.MessageEmbed()
