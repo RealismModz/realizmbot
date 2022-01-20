@@ -8,9 +8,8 @@ module.exports = {
       if(!user) return message.channel.send("Please mention a user!");
 
     try{
-        const idKey = db.get('ID')
-        console.log(idKey.messages_929210013212377108_795708708562272277);
-
+        const idKey = db.delete({ID:`messagee_${user.id}`})
+        console.log(idKey)
     }
     catch(e) {
         console.log(e.stack)
