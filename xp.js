@@ -10,8 +10,7 @@ const ytdl = require('ytdl-core');
 const search = require('youtube-search');
 const queue = new Map();
 const config1 = require('./utils/gw-config.json');
-
-const client = new Discord.Client({ fetchAllMembers: true, messageCacheMaxSize: 5 });
+const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 client.slash = require("./utils/slash-commands.js");
 module.exports = client;
 const http = require("http");
@@ -42,7 +41,7 @@ const { readdirSync } = require("fs");
 
 // will create a new command and log its data. If a command with this name already exist will that be overwritten.
 
-client.on('ready', () => {
+client.once('ready', () => {
    var arrayOfStatus = [
         `${client.users.cache.size} users`,//change this with your status
         `.help for my help!`,//change this with your status
@@ -165,18 +164,18 @@ client.giveawaysManager = new GiveawaysManager(client, {
 });
 // We now have a client.giveawaysManager property to manage our giveaways!
 
-client.giveawaysManager.on("giveawayReactionAdded", (giveaway, member, reaction) => {
+client.giveawaysManager.once("giveawayReactionAdded", (giveaway, member, reaction) => {
     if (member.id !== client.user.id){
         console.log(`${member.user.tag} entered giveaway #${giveaway.messageID} (${reaction.emoji.name})`);
     }
 });
 
-client.giveawaysManager.on("giveawayReactionRemoved", (giveaway, member, reaction) => {
+client.giveawaysManager.once("giveawayReactionRemoved", (giveaway, member, reaction) => {
     if (member.id !== client.user.id){
         console.log(`${member.user.tag} left giveaway #${giveaway.messageID} (${reaction.emoji.name})`);
     }
 });
-client.on("guildMemberAdd", async (member) => {
+client.once("guildMemberAdd", async (member) => {
  const { loadImage, createCanvas, registerFont } = require('canvas');
 const wlcmimg = "./images/banner.jpg" // Add your own image. This is just for an example
 
@@ -279,7 +278,7 @@ if(image8 == "enable")
   }
   
 );
-client.on("guildMemberRemove", async (member) => {
+client.once("guildMemberRemove", async (member) => {
   const Discord = require("discord.js");
   const db = require("quick.db");
 
@@ -334,7 +333,7 @@ channel1.send(embed)
   
 
   
-client.on("guildMemberAdd", async (member) => {
+client.once("guildMemberAdd", async (member) => {
 let autor = db.fetch(`autorole_${member.guild.id}`);
 if(!autor)
 {
@@ -351,7 +350,7 @@ const account = new alt.config({
     days: 5,// only user who has less than 2 days ages will got kick
     options: "kick"
 });
-client.on("guildMemberAdd", async (member) => {
+client.once("guildMemberAdd", async (member) => {
 let antialt = db.fetch(`antialt_${member.guild.id}`);
 if(antialt == "disable" || !antialt || antialt == null)
 {
@@ -367,7 +366,7 @@ if(antialt == "disable" || !antialt || antialt == null)
 
 });
 
-client.on("guildMemberAdd", async (member) => {
+client.once("guildMemberAdd", async (member) => {
 
 let message2 = db.fetch(`nickm_${member.guild.id}`);
 if(!message2)
@@ -380,7 +379,7 @@ if(!message2)
    member.setNickname(message2);
 
 });
-client.on("guildMemberAdd", async (member) => {
+client.once("guildMemberAdd", async (member) => {
    
         
             if(db.has(`tagg_${member.guild.id}`) && db.has(`tagn_${member.guild.id}`)) 
@@ -414,7 +413,7 @@ const manager1 = new ReactionRoleManager(client, {
 });
 // We now have a reactionRoleManager property to access the manager everywhere!
 client.reactionRoleManager = manager1;
-client.reactionRoleManager.on('reactionRoleAdded',(reactionRole,member,role,reaction) => {
+client.reactionRoleManager.once('reactionRoleAdded',(reactionRole,member,role,reaction) => {
   console.log(`${member.user.username} added his reaction \`${reaction}\` and won the role : ${role.name}`);
 })
 
@@ -424,7 +423,7 @@ fs.readdir("./events/", (err, files) => {
     const event = require(`./events/${file}`);
     let eventName = file.split(".")[0];
      console.log(`[Event Load] loading Event ${eventName}`);
-    client.on(eventName, event.bind(null, client));
+    client.once(eventName, event.bind(null, client));
   });
 });
 

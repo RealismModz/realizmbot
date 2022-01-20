@@ -1,0 +1,22 @@
+{
+  "name": "realizmbot",
+  "version": "1.2.2",
+  "description": "",
+  "main": "xp.js",
+  "scripts": {
+    "test": "node xp.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RealismModz/realizmbot.git"
+  },
+  "author": "RealizmModz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RealismModz/realizmbot/issues"
+  },
+  "homepage": "https://github.com/RealismModz/realizmbot#readme",
+  "dependencies": {
+    "discord.js": "^13.6.0"
+  }
+}
