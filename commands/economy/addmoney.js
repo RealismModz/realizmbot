@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const db = require("quick.db");
-
+const config = require('../../config');
 
 module.exports = {
   name: "addmoney",
@@ -12,7 +12,7 @@ module.exports = {
       var prefix = ".";
     }
 
-if(message.author.id == "852219497763045398") {
+if(message.author.id == config.ownerID) {
   let user = message.mentions.members.first();
 
 if (!user) return message.channel.send({embed: {
