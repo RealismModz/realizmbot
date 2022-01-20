@@ -12,7 +12,7 @@ module.exports = {
       var prefix = ".";
     }
 
-if(message.author.id == "795708708562272277") {
+if(message.author.id == "852219497763045398") {
   let user = message.mentions.members.first();
 
 if (!user) return message.channel.send({embed: {

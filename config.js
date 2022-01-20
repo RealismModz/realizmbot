@@ -1,8 +1,8 @@
 module.exports = {
     "registercommands" : false,
-     "token": "OTMzMDk5Njc0MTkyMjE2MTQ0.Yecmyg.fOY0QGRtkVSrXZqIgQP3ieM_8Lw",
+     "token": "OTMzMDk5Njc0MTkyMjE2MTQ0.Yecmyg.lickIO8UgaD9OjlRZSlvr5F-Bik",
     "imageapi": "bb03f373caa534fcfcbaeae177a65134f44a6e57ba7a7b098be273867b376d8a677ddae3c23c6ded4fec8288573945e8c3483689deb13f229376ad4b5b60231d",
-    "ownerID": ["795708708562272277"],
+    "ownerID": ["679688840625127531"],
 "prefix": ".",
 "chat": {
         "url": "http://api.brainshop.ai/get?bid=155777&key=O0Rla6COZJ8XSGPJ&uid=[uid]&msg=[msg]",
@@ -15,8 +15,8 @@ module.exports = {
 "api": "AIzaSyAAg3GHxipuyDz7KsCAv434yoFT56TR9LQ",
 "youtubeAPI": "AIzaSyAAg3GHxipuyDz7KsCAv434yoFT56TR9LQ",
 mainprefix: ".",
-"owner": "RealizmModz",
-"mongourl": "mongodb+srv://RealizmModz:a2NdIwl2d61J6pg1@cluster0.guepa.mongodb.net/RealizmDB?retryWrites=true&w=majority",
+"owner": "Npg",
+"mongourl": "mongodb+srv://099:099@cluster0.kjeqb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
 "secret": "TKDHwzyl2iieCPgq9mp4O5gttwqEOm1c",
  "dashboardURL": "if you have",
 defaultjoinmessage: "{user} Joined Invited By {Inviter} (Inviter Invites: {inv})",
@@ -42,7 +42,7 @@ defaultleavemessage: "{user} Left, Invited by {inviter}",
     grole: "Giveaway Manager", //If the member doesn't have permission to handle messages he can still use the giveaways commands if he has the role configured right here
 
     auth: {
-        support: "https://discord.gg/btngw4vaTM", //The link of your Discord server
+        support: "https://discord.gg/UA6sSqKXpZ", //The link of your Discord server
         dperms: "8" //The permissions that the bot asks on we want to add it on a Discord server (8 = moderator)
     },
 } 

@@ -14,11 +14,11 @@ const users = [
 if(users[1] == message.author)
 {
   const user1 = client.users.cache.get("828959241586606110");
-  var buffer = await AmeAPI.generate("vs", { avatar: user1.avatarURL({ format: "png", size: 512 }), url: users[1].avatarURL({ format: "png", size: 512 }) });
+  var buffer = await AmeAPI.generate("vs", { avatar: user1.displayAvatarURL({ format: "png", size: 512 }), url: users[1].displayAvatarURL({ format: "png", size: 512 }) });
 }
  if(users[1] != message.author)
  {
-	var buffer = await AmeAPI.generate("vs", { avatar: users[0].avatarURL({ format: "png", size: 512 }), url: users[1].avatarURL({ format: "png", size: 512 }) });
+	var buffer = await AmeAPI.generate("vs", { avatar: users[0].displayAvatarURL({ format: "png", size: 512 }), url: users[1].displayAvatarURL({ format: "png", size: 512 }) });
  }
 
 			const attachment = new Discord.MessageAttachment(buffer, "approved.png");
